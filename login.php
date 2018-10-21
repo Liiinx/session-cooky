@@ -4,13 +4,13 @@ session_start();
 if (!empty($_POST)) {
 
     if (empty(htmlspecialchars(trim(strip_tags($_POST['loginname']))))) {
-        echo "Votre nom n'est pas valide";
+        $errorName = "Votre nom n'est pas valide";
     } else {
         $_SESSION["name"] = $_POST['loginname'];
         header('Location: index.php');
     }
 }
-// si connecté retourne sur index
+// si deja connecté retourne sur index
 if (isset($_SESSION['name'])) {
     header('Location: index.php');
 }
@@ -21,6 +21,9 @@ require 'inc/head.php';
 <div class="container" style="margin-top:40px">
 <div class="row">
   <div class="col-sm-6 col-md-4 col-md-offset-4">
+      <?php if (isset($errorName)) {
+          echo $errorName;
+      } ?>
     <div class="panel panel-default">
       <div class="panel-heading">
         <strong> Sign in to continue</strong>

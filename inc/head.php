@@ -36,8 +36,7 @@
           <li><a href="#">Chocolates chips</a></li>
           <li><a href="#">Nuts</a></li>
           <li><a href="#">Gluten full</a></li>
-            <li><a href="../login.php">Connexion</a></li>
-            <li><a href="../logout.php">Deconnexion</a></li>
+            <li><a href="../logout.php">Logout</a></li>
 
             <li>
             <a href="/cart.php" class="btn btn-warning navbar-btn">
